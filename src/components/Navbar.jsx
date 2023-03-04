@@ -1,9 +1,15 @@
-import { useState } from "react";
-
+import { useState,useEffect } from "react";
 import { close, logo, menu } from "../assets";
 import { navLinks } from "../constants";
 
 const Navbar = () => {
+  useEffect(()=>{
+    async function connectWallet(){
+      const accounts= await window.ethereum.request({method:"eth_requestAccounts"})
+      console.log(accounts)
+    }
+    connectWallet();
+  },[])
   const [active, setActive] = useState("Home");
   const [toggle, setToggle] = useState(false);
 
