@@ -1,5 +1,6 @@
 import { useState,useEffect } from "react";
-import { close, logo, menu } from "../assets";
+import { Link } from "react-router-dom";
+import { close, logo, menu, shoppingCart } from "../assets";
 import { navLinks } from "../constants";
 
 const Navbar = () => {
@@ -26,10 +27,20 @@ const Navbar = () => {
             } ${index === navLinks.length - 1 ? "mr-0" : "mr-10"}`}
             onClick={() => setActive(nav.title)}
           >
-            <a href={`#${nav.id}`}>{nav.title}</a>
+            <Link to={`${nav.id}`}>{nav.title}</Link>
           </li>
         ))}
+        <li>
+        <div className="cart-icon w-10	">
+          <Link to='./checkout'>
+            <img src={shoppingCart} alt="cart-logo" />
+          </Link>
+          
+        </div>
+        </li>
+
       </ul>
+
 
       <div className="sm:hidden flex flex-1 justify-end items-center">
         <img

@@ -17,7 +17,7 @@ const GetFoodSlice=createSlice({
     reducers:{
         addToCart:(state,{payload})=>{
             state.cart.push(payload);
-            state.totalCostCart=payload.price;
+            state.totalCostCart+=payload.price;
 
         }
     },

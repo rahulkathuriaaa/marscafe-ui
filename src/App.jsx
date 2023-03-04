@@ -5,6 +5,11 @@ import Shop from "./components/Shop";
 import { useDispatch } from "react-redux";
 import { GetFoodThunk } from "./redux/GetFoodSlice";
 import { useEffect } from "react";
+import { Route, Routes } from "react-router-dom";
+import Home from "./Home";
+import CheckOut from "./components/CheckOut";
+
+
 
 const App = () => {
 const dispatch=useDispatch();
@@ -19,18 +24,18 @@ return(
       </div>
     </div>
 
-    <div className={`bg-primary ${styles.flexStart}`}>
-      <div className={`${styles.boxWidth}`}>
-        <Hero />
-        <Shop/>
-      </div>
-    </div>
+   <main>
+<Routes>
+
+      <Route path="/home" element={<Home/>}/>
+      
+      <Route path="/shop" element={<Shop/>}/>
+
+      <Route path="/checkout" element={<CheckOut/>}/>
+</Routes>
+   </main>
     
-    <div className={`bg-primary ${styles.paddingX} ${styles.flexCenter}`}>
-      <div className={`${styles.boxWidth}`}>
-        <Footer />
-      </div>
-    </div>
+    
   </div>
 )};
 
