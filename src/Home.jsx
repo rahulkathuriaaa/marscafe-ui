@@ -1,10 +1,10 @@
-import { Billing, Footer, Hero } from "./components";
+import { Billing, Business, Footer, Hero } from "./components";
 import Shop from "./components/Shop";
 import { useDispatch } from "react-redux";
 import { useEffect } from "react";
 import { GetFoodThunk } from "./redux/GetFoodSlice";
 import styles from "./style";
-import Mars from "./components/Mars";
+
 
 
 const Home = () =>{ 
@@ -19,8 +19,8 @@ useEffect(()=>{
         <div className={`bg-primary ${styles.flexStart}`}>
           <div className={`${styles.boxWidth}`}>
            <Hero/>
-           <Mars/>
             <Billing/>
+            <Business/>
           </div>
         </div>
         

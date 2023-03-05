@@ -1,44 +1,29 @@
-import { features } from "../constants";
 import styles, { layout } from "../style";
-import Button from "./Button";
+import Spline from '@splinetool/react-spline';
+import './Mars.css';
 
-const FeatureCard = ({ icon, title, content, index }) => (
-  <div className={`flex flex-row p-6 rounded-[20px] ${index !== features.length - 1 ? "mb-6" : "mb-0"} feature-card`}>
-    <div className={`w-[64px] h-[64px] rounded-full ${styles.flexCenter} bg-dimBlue`}>
-      <img src={icon} alt="star" className="w-[50%] h-[50%] object-contain" />
-    </div>
-    <div className="flex-1 flex flex-col ml-3">
-      <h4 className="font-poppins font-semibold text-white text-[18px] leading-[23.4px] mb-1">
-        {title}
-      </h4>
-      <p className="font-poppins font-normal text-dimWhite text-[16px] leading-[24px]">
-        {content}
-      </p>
-    </div>
-  </div>
-);
 
 const Business = () =>  (
-  <section id="features" className={layout.section}>
+  <section id="product" className={layout.sectionReverse}>
+    
+
     <div className={layout.sectionInfo}>
       <h2 className={styles.heading2}>
-        You do the business, <br className="sm:block hidden" /> we’ll handle
-        the money.
+        Easily control your <br className="sm:block hidden" /> billing &
+        invoicing
       </h2>
       <p className={`${styles.paragraph} max-w-[470px] mt-5`}>
-        With the right credit card, you can improve your financial life by
-        building credit, earning rewards and saving money. But with hundreds
-        of credit cards on the market.
+        Elit enim sed massa etiam. Mauris eu adipiscing ultrices ametodio
+        aenean neque. Fusce ipsum orci rhoncus aliporttitor integer platea
+        placerat.
       </p>
 
-      <Button styles={`mt-10`} />
+      
     </div>
-
-    {/* <div className={`${layout.sectionImg} flex-col`}>
-      {features.map((feature, index) => (
-        <FeatureCard key={feature.id} {...feature} index={index} />
-      ))}
-    </div> */}
+    <div className='marslogo'>
+            <Spline scene="https://prod.spline.design/Jaimy7l59WR7DOTs/scene.splinecode" />
+        </div>
+    
   </section>
 );
 
